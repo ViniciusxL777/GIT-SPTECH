@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de Refrigerante</title>
+</head>
+<body>
+    <h1>Consumo de Refrigerante</h1>
+    <br>
+    <h4>Informe a Quantidade de Latinhas Consumidas</h4>
+    <br>
+    Quantidade de Latinhas Por Dia: <input type="text" id="input_qtdLatinPorDia">
+    <br><br>
+    <button onclick="anoLatin()">Latinhas Por Ano</button>
+    <br><br>
+    <div id="div_qtdLatinAno">Latinhas consumidas Por Ano</div>
+</body>
+</html>
+<script>
+    function anoLatin(){
+        var latinPorDia = input_qtdLatinPorDia.value
+        var latinPorAno = latinPorDia *  365
+        if (latinPorAno >= 500){
+           alert(`CUIDADO COM A DIABETES, FORAM ${latinPorAno} LATINHAS EM UM ANO CARA!`)
+        }
+        if (latinPorAno >= 0){
+            div_qtdLatinAno.innerHTML = `Quantidades consumidas por ano são ${latinPorAno}`;
+        }
+    }
+</script>

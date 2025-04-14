@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequência</title>
+</head>
+<body>
+
+    <h1>Frequência</h1>
+    <br>
+    Frequência Do Aluno: <input type="text" id="input_aluno">
+    <br><br>
+    <button onclick="analisar()">Analisar Frequência</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        var frequencia = Number(input_aluno.value)
+
+        if (frequencia >= 50){
+            div_mensagem.innerHTML = `<img src="https://th.bing.com/th/id/OIP.6BpE9924ilbl8JaM7D-YCAHaH0?w=160&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="alunoEstudioso">`
+        }
+        else {div_mensagem.innerHTML = `<img src="https://th.bing.com/th/id/OIP.ry15T2kV-IDzIEA62ruxbAHaLH?w=128&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="alunoTurista">`}
+    }
+</script>

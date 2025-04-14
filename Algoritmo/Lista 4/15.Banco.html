@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+</head>
+<body>
+    <h1>Banco XPTO</h1>
+    <br>
+    Saldo Da Conta: <input type="number" id="input_saldoConta">
+    <br><br>
+    Valor A Ser Retirado: <input type="number" id="input_valorRetirado">
+    <br><br>
+    <button onclick="analisar()">Analisar Conta</button>
+    <br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+    var saldo = Number(input_saldoConta.value)
+    var valor = Number(input_valorRetirado.value)
+    var resultado = saldo - valor
+
+    if (resultado >= 0){
+        div_mensagem.innerHTML = `<i style="color: blue">o saldo atual da conta corrente é ${resultado}</i>`
+    }
+    else {div_mensagem.innerHTML = `<b style="color: red"><n>o saldo atual da conta corrente é ${resultado}</b>`}
+    }
+</script>

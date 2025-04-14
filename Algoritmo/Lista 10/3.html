@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Capacidade Flexível</h1><br>
+    <br>
+    Quantas pessoas vão entrar no carro:
+    <input type="text" id="input_qtdPessoa"><br>
+    Quantas pessoas o carro suporta:
+    <input type="text" id="input_carro"><br>
+    <br>
+    <button onclick="btn()">#Partiu Carona</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    function btn() {
+        var qtdPessoas = Number(input_qtdPessoa.value)
+        var qtdCarro = Number(input_carro.value)
+        var mensagem = ``
+
+        mensagem = `Entrou o 1º passageiro (que é o(a) motorista)<br>`
+        for (var pessoas = 1; pessoas <= qtdPessoas; pessoas += 1) {
+
+            if (pessoas > 1 && pessoas <= qtdCarro) {
+                mensagem += `Entrou o ${pessoas}º passageiro<br>`
+            } else if (pessoas > qtdCarro) {
+                mensagem += `O ${pessoas}º passageiro terá que esperar!<br>`
+            }
+        }
+
+        msg.innerHTML = `${mensagem}`
+    }
+</script>

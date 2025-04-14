@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Analisador de Compra: Escolhendo a Melhor TV Dentro do Orçamento</h1><br>
+    <br>
+
+    Marca da TV:
+    <select id="select_marca">
+        <option></option>
+        <option>Samsung</option>
+        <option>LG</option>
+        <option>Mondial</option>
+        <option>Britânia</option>
+    </select><br>
+    <br>
+
+    Preço da TV:
+    <input type="text" id="input_preco"><br>
+    <br>
+
+    <button onclick="analisar()">Analisar compra</button><br>
+    <br>
+
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        var select = select_marca.value
+        var preco = Number(input_preco.value)
+
+        if (select == `` || preco <= 0){
+            div_msg.innerHTML = `Preencha todos os campos com valores válidos.`
+        } else if (preco < 800 || preco > 2000){
+            div_msg.innerHTML = `TV fora da faixa de preço. <br>`
+            if (preco <= 800){
+                div_msg.innerHTML += `Preço baixo demais!`
+            } else if (preco >= 2000){
+                div_msg.innerHTML += `TV cara demais, infelizmente`
+            }
+        } else if (select == 'Mondial' || select == 'Britânia'){
+            div_msg.innerHTML = `Na faixa de preço, porém marca não confiável.`
+        } else if (select == 'LG' || select == 'Samsung'){
+            div_msg.innerHTML = `Essa TV pode entrar na sua lista!`
+        }
+    }
+</script>

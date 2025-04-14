@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Autenticação Segura: Acesso ao Banco Melete</h1><br>
+    <br>
+    login: 
+    <input type="text" id="input_login">
+    senha: 
+    <input type="text" id="input_senha">
+    informação pessoal: 
+    <input type="text" id="input_informacao">
+    <button onclick="autenticar()">Autenticar</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function autenticar(){
+        var login = input_login.value
+        var senha = input_senha.value
+        var inf = input_informacao.value
+
+        if (login == "Ana" && senha == 'Braga' && (inf == 1949 || inf == 'louro')){
+            msg.innerHTML = `Usuário autenticado`
+        } else {
+            msg.innerHTML = `Falha na autenticação`
+        }
+    }
+</script>

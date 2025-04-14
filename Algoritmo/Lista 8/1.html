@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de Avaliação de Atendimento: Dê Sua Nota!</h1><br>
+    <br>
+    Nota:
+    <input type="text" id="input_nota">
+    <button onclick="verficar()">Avaliar atendimento</button>
+</body>
+</html>
+<script>
+    function verficar(){
+        var nota = Number(input_nota.value)
+
+        if (nota < 0 || nota > 10){
+            alert(`Nota inválida`)
+        } else if (nota >= 0 && nota <= 5){
+            alert(`Não aprovado`)
+        } else if (nota > 5 && nota <= 6){
+            alert(`Neutro`)
+        } else {
+            alert(`Aprovado`)
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tabuada Colorida</h1><br>
+    <br>
+    Dígite um número:
+    <input type="text" id="input_numero"><br>
+    <button onclick="btn()">Ver Tabuada</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var numero = Number(input_numero.value)
+        var mensagem = ``
+
+        for (var multiplicador = 1; multiplicador < 10; multiplicador += 1) {
+            var resultado = numero * multiplicador
+            mensagem += `${numero}x${multiplicador}=${resultado}<br>`
+        }
+        msg.innerHTML = `${mensagem}`
+
+    }
+</script>

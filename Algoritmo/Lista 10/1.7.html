@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Viva o 7!</h1><br>
+    <br>
+    Numero (0 ate 200):
+    <input type="text" id="input_numero"><br>
+    <br>
+    <button onclick="btn()">Adoro múltiplos de 7</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var mensagem = ``
+
+        for (var numero = Number(input_numero.value); numero <= 200; numero += 1) {
+            var resto = numero % 7
+
+            if (resto == 0) {
+                mensagem += `${numero}<br>`
+            }
+            numero += 1
+        }
+
+        msg.innerHTML = `${mensagem}`
+    }
+</script>

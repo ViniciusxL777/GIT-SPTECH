@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação Aritmeticas</title>
+</head>
+<body>
+    <h1>Operaçõea Aritmeticas</h1>
+    <br>
+    Numero 1: <input type="text" id="input_n1">
+    Numero 2: <input type="text" id="input_n2">
+    <br><br>
+    <button onclick="soma()">Soma</button>
+    <br><br>
+    <button onclick="diferenca()">Diferença</button>
+    <br><br>
+    <button onclick="produto()">Produto</button>
+    <br><br>
+    <button onclick="razao()">Razao</button>
+    
+</body>
+</html>
+<script>
+    function soma(){
+        var n1 = input_n1.value
+        var n2 = input_n2.value
+        var soma = Number(n1) + Number(n2)
+        alert(`A soma entre ${n1} e ${n2} é ${soma}`)
+    }
+    
+    function diferenca(){
+        var n1 = input_n1.value
+        var n2 = input_n2.value
+        var diferenca = n1 - n2
+        alert(`A diferença entre ${n1} e ${n2} é ${diferenca}`)
+    }
+    
+    function produto(){
+        var n1 = input_n1.value
+        var n2 = input_n2.value
+        var produto = n1 * n2
+        alert(`O produto entre ${n1} e ${n2} é ${produto}`)
+    }
+    
+    function razao(){
+        var n1 = input_n1.value
+        var n2 = input_n2.value
+        var razao = n1 / n2
+        alert(`A razão entre ${n1} e ${n2} é ${razao}`)
+    }
+    
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <h1>Aposentadoria</h1>
+    <br>
+    <h4>Informe Sua Idade</h4>
+    <br><br>
+    Idade: <input type="text" id="input_idade">
+    <br><br>
+    <button onclick="AposHomem()">Aposentadoria Homem</button>
+    <button onclick="AposMulher()">Aposentadoria Mulher</button>
+
+</body>
+</html>
+<script>
+
+    function AposHomem(){
+        var aposHomem = input_idade.value
+        if (aposHomem >= 70){
+            alert(`Você já pode se aposdentar.`)
+        }
+        if (aposHomem < 70){
+            alert(`Faltam ${(aposHomem - 70)*-1} para você poder se aposentar.`)
+        }
+    }
+s
+    function AposMulher(){
+        var aposMulher = input_idade.value
+        if (aposMulher >= 60){
+            alert(`Você já pode se aposdentar.`)
+        }
+        if (aposMulher < 60){
+            alert(`Faltam ${(aposMulher - 60)*-1} para você poder se aposentar.`)
+        }
+    }
+</script>

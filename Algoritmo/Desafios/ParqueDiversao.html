@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Parque de Diversões</h1><br>
+    <br>
+    Nome:
+    <input type="text" id="input_nome"><br>
+    Altura:
+    <input type="text" id="input_altura"><br>
+    Idade:
+    <input type="text" id="input_idade"><br>
+    Acompanhada Pelo Pai/Mãe:
+    <select id="select">
+        <option></option>
+        <option>Sim</option>
+        <option>Não</option>
+    </select><br>
+    <br>
+    <button onclick="verificar()">Verificar</button>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var nome = input_nome.value
+        var altura = Number(input_altura.value)
+        var idade = Number(input_idade.value)
+        var slc = select.value
+
+        if (altura >= 1.50 && (idade >= 18 || slc == `Sim`)) {
+            alert(`Sua entrada é permitida`)
+        } else {
+            alert(`Entrada proibida`)
+        }
+    }
+</script>

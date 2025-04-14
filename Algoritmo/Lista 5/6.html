@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Times Paulistas: O Canto da Sua Torcida!</h1>
+    <br>
+    Qual dos seguintes times de São Paulo você torce (São Paulo, Palmeiras, Corinthians, Santos):<input type="text" id="input_time">
+    <br>
+    <button onclick="calcular()">Fale sobre esse time</button>
+    <br>
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+        var time = input_time.value
+
+        if (time == 'corinthians'){
+            div_msg.innerHTML = `<p style="background-color: black; color: white;">Salve o Corinthians</p>`
+        } else if (time == 'palmeiras'){
+            div_msg.innerHTML = `<x style="background-color: green; color: white;">Salve o alviverde imponente</p>`
+        } else if (time == 'saltos'){
+            div_msg.innerHTML = `<p style="background-color: white; color: black;">Agora quem dá a bola é o Santos</p>`
+        } else if (time == 'são paulo'){
+            div_msg.innerHTML = `<p style="background-color: black; color: red;">Salve o Tricolor paulista</p>`
+        } else {
+            div_msg.innerHTML = `Esse time não é de São Paulo`
+        }
+    }
+</script>

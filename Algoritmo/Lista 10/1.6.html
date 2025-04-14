@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Múltiplos de 5</h1><br>
+    <br>
+    Numero (20 ate 100):
+    <input type="text" id="input_numero"><br>
+    <br>
+    <button onclick="btn()">Adoro múltiplos de 5</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var mensagem = ``
+
+        if (numero < 20 || numero > 100) { msg.innerHTML = `Insira um número válido` }
+        else {
+            for (var numero = Number(input_numero.value); numero < 100 && numero >= 0; numero -= 1) {
+                var resto = numero % 5
+                if (resto == 0) {
+                    mensagem += `${numero}<br>`
+                }
+            }
+        }
+
+        msg.innerHTML = `${mensagem}`
+    }
+</script>

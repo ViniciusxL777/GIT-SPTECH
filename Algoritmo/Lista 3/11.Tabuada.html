@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <br>
+    De Qual Número Você Quer A Tabuada: <input type="text" id="input_numero">
+    <br><br>
+    <button onclick="calcular()">Ver Tabuada</button>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+        var numero = input_numero.value
+
+        var res1 = numero * 1
+        var res2 = numero * 2
+        var res3 = numero * 3
+        var res4 = numero * 4
+        var res5 = numero * 5
+        var res6 = numero * 6
+        var res7 = numero * 7
+        var res8 = numero * 8
+        var res9 = numero * 9
+        var res10 = numero * 10
+        alert(`1 x ${numero} = ${1}
+        2 x ${numero} = ${res2}
+        3 x ${numero} = ${res3}
+        4 x ${numero} = ${res4}
+        5 x ${numero} = ${res5}
+        6 x ${numero} = ${res6}
+        7 x ${numero} = ${res7}
+        8 x ${numero} = ${res8}
+        9 x ${numero} = ${res9}
+        10 x ${numero} = ${res10}`)
+
+
+    }
+</script>

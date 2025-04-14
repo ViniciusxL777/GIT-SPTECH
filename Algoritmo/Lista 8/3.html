@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Simulador de Preço do Bilhete Único de São Paulo</h1><br>
+    <br>
+    Tipo de passageiro:
+    <select id="select_passageiro">
+        <option></option>
+        <option>Comum</option>
+        <option>Estudante</option>
+        <option>Idoso/PNE</option>
+    </select><br>
+    <br>
+    Tipo de passagem:
+    <select id="select_passagem">
+        <option></option>
+        <option>Passagem única</option>
+        <option>Passagem integração</option>
+    </select><br>
+    <br>
+    <button onclick="simular()">Simular preço</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function simular() {
+        var passageiro = select_passageiro.value
+        var passagem = select_passagem.value
+        var passUnic = 4.4
+        var passInt = 5.9
+        var passEst = 0.5
+        var pagar = 0
+
+        if (passageiro == '' || passagem == '') {
+            msg.innerHTML = `Preencha todos os campos`
+        } else if (passageiro == 'Comum') {
+            if (passagem == 'Passagem única') {
+                pagar = passUnic
+                msg.innerHTML = `Valor da passagem escolhida: R$${pagar}`
+            } else {
+                pagar = passInt
+                msg.innerHTML = `Valor da passagem escolhida: R$${pagar}`
+            }
+        } else if (passageiro == 'Estudante') {
+            if (passagem == 'Passagem única') {
+                pagar = passUnic * passEst
+                msg.innerHTML = `Valor da passagem escolhida: R$${pagar}`
+            } else {
+                pagar = passInt * passEst
+                msg.innerHTML = `Valor da passagem escolhida: R$${pagar}`
+            }
+        } else if (passageiro == 'Idoso/PNE') {
+            msg.innerHTML = `Passagem grátis`
+        }
+
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Números cabalísticos</h1><br>
+    <br>
+    <button onclick="btn()">Números cabalísticos</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var mensagem = ``
+
+        for (var cont = 0; cont <= 30; cont += 1) {
+            if (cont != 3 && cont != 4 && cont != 7 && cont != 10 && cont != 12) {
+                mensagem += `${cont}<br>`
+            }
+        }
+        msg.innerHTML = `${mensagem}`
+
+    }
+</script>

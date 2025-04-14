@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Seleção de Pilotos: Você Tem a Altura Ideal?</h1><br>
+    <br>
+
+    Intervalo da altura inicial desejada para os pilotos do processo seletivo:
+    <input type="text" id="input_intervalo"><br>
+
+    Intervalo da altura final desejada para os pilotos do processo seletivo:
+    <input type="text" id="input_intervaloFinal"><br>
+
+    Nome do candidato a piloto:
+    <input id="input_nome"></input><br>
+    
+    Altura do candidato a piloto:
+    <input type="text" id="input_alturaPiloto"><br>
+    <br>
+
+    <button onclick="verificar()">Verificar Candidato</button>
+
+</body>
+</html>
+<script>
+    function verificar(){
+        var intervalo = Number(input_intervalo.value)
+        var intervaloFinal = Number(input_intervaloFinal.value)
+        var nome = input_nome.value
+        var altura = Number(input_alturaPiloto.value)
+
+        if (intervalo <= 1 && intervaloFinal <= intervalo){
+            alert(`Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial`)
+        } else if (altura >= intervalo && altura <= intervaloFinal){
+            alert(`O candidato ${nome}, com altura de ${altura} metros, participará do processo de seleção de piloto`)
+        } else if (altura < intervalo && altura <= intervaloFinal){
+            alert(`Infelizmente, o candidato XXXXX, com altura de 9.99 metros, não atende os requisitos da seleção `)
+        } else if (altura >= intervalo && altura > intervaloFinal){
+            alert(`Infelizmente, o candidato ${nome}, com altura de ${altura} metros, não atende os requisitos da seleção`)
+        }
+    }
+</script>

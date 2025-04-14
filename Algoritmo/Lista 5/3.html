@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sensação Térmica: Como o Corpo Humano Percebe a Temperatura</h1>
+    <br>
+    <input type="number" id="input_temperatura">
+    <br>
+    <button onclick="calcular()">Analisar Temperatura</button>
+    <br>
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+    var temperatura = Number(input_temperatura.value)
+
+    if (temperatura < 14){
+        div_msg.innerHTML = `Congelante`
+    } else if (temperatura < 21){
+        div_msg.innerHTML = `Com Frio`
+    } else if (temperatura < 24){
+        div_msg.innerHTML = `Confortável`
+    } else if (temperatura < 31){
+        div_msg.innerHTML = `Com Calor`
+    } else if (temperatura > 31){
+        div_msg.innerHTML = `Calor escaldante`
+    }
+
+    }
+</script>

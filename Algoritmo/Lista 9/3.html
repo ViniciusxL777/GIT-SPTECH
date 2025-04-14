@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Frase Repetitiva</h1><br>
+    <br>
+    digite:
+    <input type="text" id="input_frase">
+    <button onclick="bla()">Diga algo sobre a matéria de Algoritmos</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function bla() {
+        msg.innerHTML = ``
+
+        var frase = input_frase.value
+        var numero = 0
+        while (numero <= 15) {
+            msg.innerHTML += `${numero}.  ${frase}<br>`
+            numero++
+        }
+
+    }
+</script>

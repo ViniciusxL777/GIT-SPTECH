@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevador</title>
+</head>
+<body>
+    <h1>Elevador</h1>
+    <br>
+    Quantidade De Homens: <input type="text" id="input_qtdHomens">
+    <br><br>
+    Quantidade de Mulheres: <input type="text" id="input_qtdMulher">
+    <br><br>
+    <button onclick="ligar()">Ligar Elevador</button>
+    <br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function ligar(){
+        var qtdHomens = Number(input_qtdHomens.value)
+        var qtdMulher = Number(input_qtdMulher.value)
+        var pesoHomem = qtdHomens * 90
+        var pesoMulher = qtdMulher * 70
+        var pesoTotal = Number(pesoHomem) + Number(pesoMulher)
+
+        if (pesoTotal <= 500){
+            div_mensagem.innerHTML = `<b style="color: green"> Elevador vai se mover, pois está com ${pesoTotal}Kg </b>`
+        }
+        else {div_mensagem.innerHTML = `<b style="color: red"> Alguém precisa descer </b>`}
+    }
+</script>

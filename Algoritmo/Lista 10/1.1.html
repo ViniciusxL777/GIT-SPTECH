@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Contagem Simples</h1><br>
+    <br>
+    <button onclick="btn()">Contar</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var mensagem = ``
+        msg.innerHTML = ``
+
+        for (var cont = 1; cont <= 15; cont += 1) {
+            mensagem += `${cont}<br>`
+        }
+        msg.innerHTML = `${mensagem}`
+    }
+</script>

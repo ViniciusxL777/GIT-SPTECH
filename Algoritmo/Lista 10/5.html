@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Café com Leite na Medida Certa</h1><br>
+    <br>
+    Quantas xícaras de café com leite você já tomou na vida:
+    <input type="text" id="input_qtdCafe"><br>
+    <br>
+    <button onclick="btn()">Ver a quantidade</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function btn() {
+        var leite = 0
+        var cafe = 0
+        var mensagem = ``
+
+        for (var qtdCafe = Number(input_qtdCafe.value); qtdCafe > 0; qtdCafe -= 1) {
+            cafe += 2
+            leite += 1
+        }
+
+        msg.innerHTML = `Colheres de café ${cafe};<br>Colheres de leite ${leite}`
+
+    }
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Treino de Musculação</h1><br>
+    <br>
+    Quantos em quantos dias o você faz musculação:
+    <input type="text" id="input_qtdMusculacao"><br>
+    <br>
+    <button onclick="btn()">Exibir rotina mensal</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function btn() {
+        var qtdMusculacao = Number(input_qtdMusculacao.value)
+        var mensagem = ``
+        var dia = 2
+
+        msg.innerHTML = `${mensagem}`
+
+        if (qtdMusculacao == 0) {
+            mensagem = `Tá na hora de comecar a se cuidar em!!`
+
+        } else if (qtdMusculacao < 0) {
+            mensagem = `Insira valores válidos`
+        } else if (qtdMusculacao == 1) {
+            mensagem = `Para de ser muluco e descane um dia`
+        } else {
+            mensagem += `Dia 1 - musculação<br>`
+
+            while (dia <= 30) {
+                var resto = (dia - 1) % qtdMusculacao
+                if (resto == 0) {
+                    mensagem += `Dia ${dia} - musculação <br>`
+                } else {
+                    mensagem += `Dia ${dia} - comer e dormir<br>`
+                }
+                dia += 1
+            }
+        }
+        msg.innerHTML = `${mensagem}`
+    }
+</script>

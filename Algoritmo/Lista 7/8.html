@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Critérios de Preferência de Augusto Bivio</h1><br>
+    <br>
+
+    nome da empresa: <input type="text" id="input_nome"><br>
+
+    valor da bolsa da empresa: <input type="text" id="input_bolsa"><br>
+
+    alor do VR da empresa: <input type="text" id="input_vr"><br>
+
+    tempo de deslocamento da empresa para a SPTech: <input type="text" id="input_deslocamento"><br>
+    <br>
+
+    <button onclick="calcular()">É preferida</button><br>
+    <br>
+
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+        var nome = input_nome.value
+        var bolsa = Number(input_bolsa.value)
+        var vr = Number(input_vr.value)
+        var deslocamento = Number(input_deslocamento.value)
+
+        if (bolsa == 1800 || vr == 20 || deslocamento == 30){
+            div_msg.innerHTML = `A empresa ${nome} é uma de suas preferências`
+        } else {
+            div_msg.innerHTML = `A empresa ${nome} está fora da sua lista`
+        }
+    }
+</script>

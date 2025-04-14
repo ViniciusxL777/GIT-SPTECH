@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luz</title>
+</head>
+<body>
+    <h1>Conta De Luz</h1>
+    <br><br>
+    Quantidade de KWh: <input type="text" id="input_qtdKwh">
+    <br><br>
+    <button onclick="calcular()">Calcular Conta De Luz</button>
+    
+</body>
+</html>
+<script>
+    function calcular(){
+        var qtdKwh = input_qtdKwh.value
+        var pagar = qtdKwh * 0.85
+
+        if (qtdKwh < 100){
+            alert(`Sua Conta Será de R$${pagar * 0.9}`)
+        }
+        else {alert(`Sua Conta Será de R$${pagar}`)}
+    }
+</script>

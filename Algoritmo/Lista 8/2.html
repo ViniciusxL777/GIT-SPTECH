@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Simulador de Preferências de Compras: Será que Robervaldo Gostaria?</h1><br>
+    <br>
+    Tamanho da tela do celular:
+    <input type="text" id="input_tela">
+    Cor do celular:
+    <select id="select_cor">
+        <option></option>
+        <option>Preto</option>
+        <option>Prata</option>
+        <option>Azul</option>
+        <option>Vermelho</option>
+    </select><br>
+    <br>
+    <button onclick="verificar()">Será que ele gosta?</button><br>
+    <br>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var tela = Number(input_tela.value)
+        var cor = select_cor.value
+
+        if (tela >= 6.5 && (cor == 'Prata' || cor == 'Preto')){
+            div_msg.innerHTML = `<img src="https://thumbs.dreamstime.com/b/smiley-cara-feliz-del-vector-94248929.jpg" alt="Feliz">`
+        } else {
+            div_msg.innerHTML = `<img src="https://img.freepik.com/vetores-premium/emoji-chorando-cara-de-emoticon-triste-com-lagrima_686498-2691.jpg?w=20001" alt="Triste">`
+        }
+    }
+</script>

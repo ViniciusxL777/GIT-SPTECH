@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+</head>
+<body>
+    <h1>Temperatura Do Ambiente</h1>
+    <br>
+    Qual A Temperatura Do Ambiente: <input type="text" id="input_tempAmbiente">
+    <br><br>
+    <button onclick="verificar()">Verificar Clima</button>
+    <br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function verificar(){
+        var temperatura = Number(input_tempAmbiente.value)
+
+        if (temperatura < 10){
+            div_mensagem.innerHTML = `Apropriada p/ conservar alimento <br>
+            <img src="https://th.bing.com/th/id/OIP.fMgvVBBBk1pnOJF6hZcI1QHaE8?w=244&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="alunoEstudioso">`
+        }
+        else {div_mensagem.innerHTML = `Inapropriada p/ conservar alimento <br>
+            <img src="https://th.bing.com/th/id/OIP.0ntU3wiGvM5fKxJM2NyChwHaD3?w=340&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="alunoEstudioso">`
+        }
+    }
+</script>

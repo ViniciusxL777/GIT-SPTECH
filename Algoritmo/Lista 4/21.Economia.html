@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econômia</title>
+</head>
+<body>
+    <h1>Econômia</h1>
+    <br>
+    Qual Sua Meta De Econômia: <input type="text" id="input_qtdEconomia">
+    <br><br>
+    Quanto Tem Guardado: <input type="text" id="input_qtdGuardado">
+    <br><br>
+    <button onclick="analisar()">Analisar Econômia</button>
+    <br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        var qtdEconomia = Number(input_qtdEconomia.value)
+        var qtdGuardado = Number(input_qtdGuardado.value)
+        var diferenca = qtdEconomia - qtdGuardado
+
+        if (qtdEconomia == qtdGuardado){
+            div_mensagem.innerHTML = `Parabéns, meta alcançada!`
+        }
+        if (qtdEconomia < qtdGuardado){
+            div_mensagem.innerHTML += `<br>Meta ultrapassada em R$${diferenca}`
+        }
+        if (qtdEconomia > qtdGuardado){
+            div_mensagem.innerHTML = ` Força! Ainda em busca da meta! Falta R$${diferenca * -1}`
+        }
+    }
+</script>

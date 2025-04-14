@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Frase Repetitiva</h1><br>
+    <br>
+    <button onclick="bla()">Diga algo sobre a matéria de Algoritmos</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function bla() {
+        var mensagem = ``
+        msg.innerHTML = ``
+
+        for (var cont = 1; cont <= 15; cont += 1) {
+            mensagem += `Bla<br>`
+        }
+        msg.innerHTML = `${mensagem}`
+
+    }
+</script>

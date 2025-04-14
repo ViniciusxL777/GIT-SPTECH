@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Striming</title>
+</head>
+<body>
+    <h1>Horas Assistidas</h1>
+    <br>
+    Última Série (SITCOM) Que Você Assistiu: <input type="text" id="input_ultimaSerie">
+    <br><br>
+    Total De Episódios Que Você Já Assistiu Da Série: <input type="text" id="input_totalEp">
+    <br><br>
+    <button onclick="verificar()">Verificar Nível</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    function verificar(){
+        var nome = input_ultimaSerie.value
+        var episodeos = Number(input_totalEp.value)
+        var horasTotal = episodeos * 22 / 60
+
+            div_mensagem.innerHTML = `Vejo que você gosta da série ${nome}`
+
+        if (horasTotal >= 30){
+            div_mensagem.innerHTML += `<br> Uau, você realmente gosta dessa série!`
+        }
+
+        else {div_mensagem.innerHTML = `Vejo que você gosta da série ${nome}`}
+    }
+</script>

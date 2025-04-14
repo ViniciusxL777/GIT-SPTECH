@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>FizzBuzz</h1><br>
+    <br>
+    <button onclick="btn()">FizzBuzz</button>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function btn() {
+        var mensagem = ``
+
+        for (var cont = 1; cont <= 100; cont += 1) {
+            resto2 = cont % 3
+            resto3 = cont % 5
+
+            if (resto2 == 0 && resto3 == 0) {
+                mensagem += `FizzBuzz<br>`
+            } else if (resto2 == 0) {
+                mensagem += `Fizz<br>`
+            } else if (resto3 == 0) {
+                mensagem += `Buzz<br>`
+            } else {
+                mensagem += `${cont}<br>`
+            }
+        }
+
+        msg.innerHTML = mensagem
+    }
+</script>

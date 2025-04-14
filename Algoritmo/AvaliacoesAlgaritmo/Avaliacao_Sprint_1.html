@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despesas</title>
+</head>
+<body>
+    <H1>Despesas Fixas</H1>
+    <br>
+    Quantidade de energia consumida em kWh: <input type="number" id="input_qtdEnergiaConsumida">
+    <br><br>
+    Bandeira tarifária da energia: <input type="text" id="input_bandeiraTarifariaEnergia">
+    <br><br>
+    Quantidade de MB (megabyte) do plano de internet: <input type="number" id="input_qtdMb">
+    <br><br>
+    Linha Telefônica: <input type="text" id="input_linhaTelefonica">
+    <br><br>
+    <button onclick="calcular()">Calcular Despesas Fixas</button>
+    <br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var qtdEnergiaConsumida = Number(input_qtdEnergiaConsumida.value)
+        var bandeiraTarifariaEnergia = input_bandeiraTarifariaEnergia.value
+        var qtdMb = Number(input_qtdMb.value)
+        var linhaTelefonica = input_linhaTelefonica.value
+
+        var bandeiraVerde = 'verde'
+        var bandeiraAmarelo = 'amarelo'
+        var bandeiraVermelho = 'vermelho'
+
+        var totalEnergia = 0
+
+        if ( bandeiraTarifariaEnergia == bandeiraVerde ){
+            totalEnergia = qtdEnergiaConsumida * 0.75 
+        } 
+        if ( bandeiraTarifariaEnergia == bandeiraAmarelo ){
+            totalEnergia = qtdEnergiaConsumida * 0.90
+        }
+        if ( bandeiraTarifariaEnergia == bandeiraVermelho ){
+            totalEnergia = qtdEnergiaConsumida * 1.00
+        }
+
+        var totalInternet = 0
+        
+        var valorBase = qtdMb * 0.80
+        
+        var linhaSim = 'sim'
+        var linhaNao = 'não'
+
+        if ( linhaTelefonica == linhaSim){
+            totalInternet = valorBase * 1.35
+        } 
+        if ( linhaTelefonica == linhaNao ){
+            totalInternet = valorBase * 0.925
+        }
+
+        totalDespesas = Number(totalInternet) + Number(totalEnergia)
+
+        div_mensagem.innerHTML = `
+        <p>Com o consumo de ${qtdEnergiaConsumida}kWh na bandeira ${bandeiraTarifariaEnergia}, a conta de energia totaliza R$ ${totalEnergia}. <br>
+           Com o consumo de ${qtdMb} MB de internet, o valor do plano de internet/telefone totaliza R$${totalInternet}. <br>
+           Gasto total de despesas mensal: R$${totalDespesas}.
+        </p>`  
+}
+</script>

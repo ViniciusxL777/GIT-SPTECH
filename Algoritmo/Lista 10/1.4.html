@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>S2 Pares</h1><br>
+    <br>
+    <button onclick="btn()">S2 Pares</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var mensagem = ``
+
+        for (var cont = 0; cont <= 100; cont += 2) {
+            mensagem += `${cont}<br>`
+        }
+
+        msg.innerHTML = `${mensagem}`
+
+    }
+</script>

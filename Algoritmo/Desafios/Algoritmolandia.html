@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmolândia</title>
+</head>
+
+<body>
+    <h1>Algoritmolândia</h1><br>
+    <br>
+    Valor do salário:
+    <input type="text" id="input_salario"><br>
+    Adicional mensal:
+    <input type="text" id="input_addMensal"><br>
+    Bônus:
+    <input type="text" id="input_bonus"><br>
+    <button onclick="analisar()">Analisar Minha Renda</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var salario = Number(input_salario.value)
+        var addMensal = Number(input_addMensal.value)
+        var bonus = Number(input_bonus.value)
+        var salInicial = salario + bonus + addMensal
+        var salIr = 0
+        var salInss = 0
+        var salFgts = 0
+
+
+
+        if (salInicial >= 10000) {
+            salIr = salInicial * 0.125
+            salInss = (salInicial - salIr) * 0.10
+            salFgts = ((salInicial - salIr)) * 0.08
+            var salFinal = salInicial - salInss - salFgts - salIr
+            var poupanca = salFinal * 0.15
+
+            msg.innerHTML = `<b>ANÁLISE DA SUA RENDA</b> 
+
+                Com o salário de <b>R$${salInicial}, com adicional de <b>R$${addMensal}</b> e bônus de <b>R$${bonus}</b>, você tem:<br> 
+
+                Bruto: <b>R$${salInicial}</b>  <br>
+
+                IR: <b>R$${salIr}</b>  <br>
+
+                INSS: <b>R$${salInss}</b>  <br>
+
+                FGTS: <b>R$${salFgts}</b> <br>
+
+                Líquido: <b>R$${salFinal}</b> <br>
+                <br>`
+
+            msg.innerHTML += `Com a renda de <b>R$${salFinal}</b>, 
+                é recomendado poupar <b>R$${poupanca}</b>, 
+                para que em um ano tenha poupado <b>R$${poupanca * 12}</b>`
+
+        } else if (salInicial > 2500) {
+            salIr = 0
+            salInss = salInicial * 0.10
+            salFgts = salInicial * 0.08
+            var salFinal = salInicial - salInss - salFgts - salIr
+            var poupanca = salFinal * 0.15
+
+            msg.innerHTML = `<b>ANÁLISE DA SUA RENDA</b> 
+
+                Com o salário de <b>R$${salInicial}, com adicional de <b>R$${addMensal}</b> e bônus de <b>R$${bonus}</b>, você tem:<br> 
+
+                Bruto: <b>R$${salInicial}</b>  <br>
+
+                IR: <b>R$${salIr}</b>  <br>
+
+                INSS: <b>R$${salInss}</b>  <br>
+
+                FGTS: <b>R$${salFgts}</b> <br>
+
+                Líquido: <b>R$${salFinal}</b> <br>
+                <br>`
+
+            msg.innerHTML += `Com a renda de <b>R$${salFinal}</b>, 
+                é recomendado poupar <b>R$${poupanca}</b>, 
+                para que em um ano tenha poupado <b>R$${poupanca * 12}</b>`
+
+        } else {
+            salIr = 0
+            salInss = salInicial * 0.10
+            salFgts = salInicial * 0.08
+            var salFinal = salInicial - salInss - salFgts - salIr
+            var poupanca = salFinal * 0.15
+
+            msg.innerHTML = `<b>ANÁLISE DA SUA RENDA</b> 
+
+                Com o salário de <b>R$${salInicial}</b>, com adicional de <b>R$${addMensal}</b> e bônus de <b>R$${bonus}</b>, você tem:<br> 
+
+                Bruto: <b>R$${salInicial}</b>  <br>
+
+                IR: <b>R$${salIr}</b>  <br>
+
+                INSS: <b>R$${salInss}</b>  <br>
+
+                FGTS: <b>R$${salFgts}</b> <br>
+
+                Líquido: <b>R$${salFinal}</b> <br>
+                <br>`
+
+            msg.innerHTML += `Com a renda de <b>R$${salFinal}</b>, é recomendado obter renda extra para realizar uma poupança.`
+        }
+
+    }
+</script>

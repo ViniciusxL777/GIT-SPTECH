@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Doces Gourmets</h1><br>
+    <br>
+    Quantidade de doce a ser vendido (Macarons):
+    <input type="text" id="input_macarons">
+    Preço da unidade:
+    <input type="text" id="input_precoMacarons"><br>
+    Quantidade de doce a ser vendido (Brigadeiros Gourmets):
+    <input type="text" id="input_brigadeiro">
+    Preço da unidade:
+    <input type="text" id="input_precoBrigadeiro"><br>
+    Quantidade de doce a ser vendido (Cupcakes):
+    <input type="text" id="input_cupcakes">
+    Preço da unidade:
+    <input type="text" id="input_precoCupcakes"><br>
+    Quantidade de doce a ser vendido (Cheesecakes):
+    <input type="text" id="input_cheesecakes">
+    Preço da unidade:
+    <input type="text" id="input_precoCheesecakes"><br>
+    <br>
+    <button onclick="verificar()">Verificar Vendas</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var mc = Number(input_macarons.value)
+        var bg = Number(input_brigadeiro.value)
+        var cup = Number(input_cupcakes.value)
+        var cheese = Number(input_cheesecakes.value)
+
+        var mcVenda = mc
+        var bgVenda = bg
+        var cupVenda = cup
+        var cheeseVenda = cheese
+
+        var precoMc = Number(input_precoMacarons.value)
+        var precoBg = Number(input_precoBrigadeiro.value)
+        var precoCup = Number(input_precoCupcakes.value)
+        var precoCheese = Number(input_precoCheesecakes.value)
+
+        var total = mc * precoMc + bg * precoBg + cup * precoCup + cheese * precoCheese
+        var vendaTotal = mc + bg + cup + cheese
+        var venda = 1
+
+        var mensagem = ``
+        msg.innerHTML = ``
+
+        if (mc == 0 && bg == 0 && cup == 0 && cheese == 0 && precoMc == 0 && precoBg == 0 && precoCup == 0 && precoCheese == 0) {
+            mensagem = `Preencha os campos`
+        } else if (mc < 0 || bg < 0 || cup < 0 || cheese < 0 || precoMc < 0 || precoBg < 0 || precoCup < 0 || precoCheese < 0) {
+            mensagem = `Insira valores válidos, não trabalhamos com valores negativos`
+        } else if (precoMc < 0 || precoBg < 0 || precoCup < 0 || precoCheese < 0) {
+            mensagem = `Insira precos válidos, não trabalhamos com valores negativos`
+        } else {
+            while (vendaTotal > 0) {
+                if (mcVenda > 0) {
+                    mensagem += `Venda ${venda} - <img style="width: 100px; height: 100px;" src="https://th.bing.com/th/id/OIP.xIlxISLKm5oayX0Aty2llQHaE8?rs=1&pid=ImgDetMain" alt="Macarons"> - R$${precoMc}<br>`
+                    mcVenda -= 1
+                    vendaTotal -= 1
+                    venda += 1
+                } else if (bgVenda > 0) {
+                    mensagem += `Venda ${venda} - <img style="width: 100px; height: 100px;" src="https://th.bing.com/th/id/OIP.NvQdS8XeLSZmDC_mgHbklAHaFg?rs=1&pid=ImgDetMain" alt="Brigadeiros Gourmets"> - R$${precoBg}<br>`
+                    bgVenda -= 1
+                    vendaTotal -= 1
+                    venda += 1
+                } else if (cupVenda > 0) {
+                    mensagem += `Venda ${venda} - <img style="width: 100px; height: 100px;" src="https://th.bing.com/th/id/OIP.W_BxXuZhfdyxp4XPzDOF-QHaLH?rs=1&pid=ImgDetMain" alt="Cupcakes"> - R$${precoCup}<br>`
+                    cupVenda -= 1
+                    vendaTotal -= 1
+                    venda += 1
+                } else {
+                    mensagem += `Venda ${venda} - <img style="width: 100px; height: 100px;" src="https://th.bing.com/th/id/R.9ae154b33b7d290c9ae7a1a612b1f4a7?rik=kcx5n1dRE9E%2fUg&pid=ImgRaw&r=0" alt="Cheesecakes"> - R$${precoCheese}<br>`
+                    cheese -= 1
+                    vendaTotal -= 1
+                    venda += 1
+                }
+            }
+
+            mensagem += `<br>Com a quantidade de ${mc} Macarons, ${bg} Brigadeiros, ${cup} Cupcakes e ${cheese} Cheesecakes, a venda totalizará R$${total}`
+        }
+
+        msg.innerHTML = `${mensagem}`
+    }
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recarga Fidelidade Metrô: Economize com Descontos Especiais!</h1><br>
+    <br>
+    Quantidade de passagens que deseja adquirir:
+    <input type="text" id="input_pass"><br>
+    <br>
+
+    <button onclick="comprar()">Comprar</button><br>
+    <br>
+
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+<script>
+    function comprar(){
+        var passagens = Number(input_pass.value)
+        var valor = 4.4
+        var desconto = 0
+
+        if (passagens >= 8 && passagens <= 50){
+            if (passagens >= 8 && passagens <= 19){
+                desconto = 0.97
+            } else if (passagens >= 20 && passagens < 50){
+                desconto = 0.95
+            } else if (passagens == 50){
+                desconto = 0.93
+            }
+        } else {
+            alert(`Quantidade inválida para o Fidelidade!`)
+        }
+
+        var total = passagens * valor * desconto
+
+        div_msg.innerHTML = `Total a pagar: ${total}`
+    }
+</script>

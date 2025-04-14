@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Acompanhando a Poupança</h1><br>
+    <br>
+    Quantos depósitos você fez no banco:
+    <input type="text" id="input_depBanco"><br>
+    Valor de cada depósito:
+    <input type="text" id="input_valor">
+    <br>
+    <button onclick="btn()">Acompanhar grana</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var depBanco = Number(input_depBanco.value)
+        var valorInicial = Number(input_valor.value)
+        var valor = 0
+        var total = valorInicial
+        var mensagem = ``
+
+        {
+            for (var cont = 1; cont <= depBanco; cont += 1) {
+                if (cont < 3) {
+                    valor += valorInicial
+                    mensagem += `${cont}º Mês: R$ ${valor}<br>`
+                } else {
+                    valor += valorInicial * 1.01
+                    mensagem += `${cont}º Mês: R$ ${valor} <img style="width: 18px; height: 18px;" src="https://imagepng.org/wp-content/uploads/2017/10/estrela-1.png" alt="estrela"><br>`
+                }
+                total += valor
+            }
+            mensagem += `Total guardado: R$${total}`
+        }
+        msg.innerHTML = `${mensagem}`
+
+    }
+</script>

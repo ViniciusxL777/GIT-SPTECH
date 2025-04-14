@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ônibus</title>
+</head>
+<body>
+    <H1>Ônibus</H1>
+    <br>
+    Valor Da Passagem: <input type="number" id="input_valorPass">
+    <br><br>
+    Quantas Viajens Por Mês: <input type="number" id="input_qtdViajemMes">
+    <br><br>
+    Qual A Distância Do Trabalho Para A Sua Casa Em Km: <input type="number" id="input_distTrabCasa">
+    <br><br>
+    <button onclick="calcularVT()">Calcule VT</button>
+    <br><br>
+    <div id="div_calcularVT">Você vai gastar ... por mês com transporte.</div>
+    
+</body>
+</html>
+<script>
+    function calcularVT(){
+        var valorPass = input_valorPass.value
+        var qtdViajensPorMes = input_qtdViajemMes.value
+        var distTrabCasa = input_distTrabCasa.value
+        var qtdViajensOnibus = qtdViajensPorMes * 0.9
+        var qtdViajensUber = qtdViajensPorMes * 0.1
+        var valorOnibus = valorPass * qtdViajensOnibus
+        var valorUber = distTrabCasa * 0.75 * qtdViajensUber
+        var resultado = Number(valorOnibus) + Number(valorUber)
+        div_calcularVT.innerHTML = `Você vai gastar R$${resultado} por mês com transporte.`
+    }
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>É tri/penta!</h1><br>
+    <br>
+    Intervalo inicial:
+    <input type="text" id="input_inicial"><br>
+    Intervalo Final:
+    <input type="text" id="input_final"><br>
+    <br>
+    <button onclick="btn()">Curto 3 e 5!</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function btn() {
+        var inicial = Number(input_inicial.value)
+        var final = Number(input_final.value)
+        var resto1 = 0
+        var resto2 = 0
+        var resto3 = 0
+        var mensagem = ``
+        msg.innerHTML = ``
+
+        if (inicial >= final || inicial == final) {
+            mensagem = `insira os intervalos de forma correta`
+        } else {
+            while (inicial <= final) {
+                resto1 = inicial % 3
+                resto2 = inicial % 5
+                resto3 = (inicial % 3) + (inicial % 5)
+
+                if (resto3 === 0) {
+                    mensagem += `É TRI!É PENTA!<br>`
+                } else if (resto2 === 0) {
+                    mensagem += `É PENTA!<br>`
+                } else if (resto1 === 0) {
+                    mensagem += `É TRI!<br>`
+                } else {
+                    mensagem += `${inicial}<br>`
+                }
+                inicial += 1
+            }
+        }
+
+        msg.innerHTML = mensagem
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball</title>
+</head>
+<body>
+    <h1>Dragon Ball</h1>
+    <br>
+    Nome Do Guerreiro: <input type="text" id="input_nomeGuerreiro">
+    <br><br>
+    Ki Na Forma Base: <input type="text" id="input_kiNormal">
+    <br><br>
+    <button onclick="verKi()">Ver Ki Em Cada Forma</button>
+
+    
+</body>
+</html>
+<script>
+    function verKi(){
+        var kiBase = input_kiNormal.value
+        var nome = input_nomeGuerreiro.value
+        var ss1 = kiBase * 50
+        var ss2 = kiBase * 100
+        alert(`Guerreiro ${nome}, seu ki em Super Sayajin 1 é de ${ss1} e seu ki em Super Sayajin 2 é de ${ss2}`)
+    }
+</script>

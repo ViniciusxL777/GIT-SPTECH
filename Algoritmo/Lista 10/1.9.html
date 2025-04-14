@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Pares no Intervalo</h1><br>
+    <br>
+    Intervalo inicial:
+    <input type="text" id="input_inicial"><br>
+    Intervalo final:
+    <input type="text" id="input_final"><br>
+    <br>
+    <button onclick="btn()">S2 Pares</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var mensagem = ``
+
+        var inicial = Number(input_inicial.value)
+        var final = Number(input_final.value)
+
+        for (; inicial <= final; inicial += 1) {
+            var resto = inicial % 2
+            if (resto == 0) {
+                mensagem += `${inicial}<br>`
+            }
+        }
+        msg.innerHTML = `${mensagem}`
+    }
+</script>
