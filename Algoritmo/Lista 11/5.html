@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Simulação</h1><br>
+    <button onclick="btn()">Jogar</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    var jogador1 = 0
+    var jogador2 = 0
+
+    function btn() {
+        var aleatorio1 = (Math.random() * 2 + 1).toFixed(0)
+        var aleatorio2 = (Math.random() * 2 + 1).toFixed(0)
+        var mensagem = ``
+        
+        if (aleatorio1 == 1) {
+            mensagem += `<p><img style="width: 200px;height: 200px;" src="https://tse1.mm.bing.net/th/id/OIP.EjVUjdM6sixst1RewX2DRQHaD5?rs=1&pid=ImgDetMain" alt=""></p>`
+        } else if (aleatorio1 == 2) {
+            mensagem += `<p><img style="width: 200px;height: 200px;" src="https://tse2.mm.bing.net/th/id/OIP.xnPDBBqsbK_UtSAYhqpq0AHaHa?rs=1&pid=ImgDetMain" alt=""></p>`
+        } else {
+            mensagem += `<p><img style="width: 200px;height: 200px;" src="https://www.usinainfo.com.br/1028730-thickbox_default/tesoura-10-de-uso-geral-com-cabo-curvado.jpg" alt=""></p>`
+        }
+
+        if (aleatorio2 == 1) {
+            mensagem += `<p><img style="width: 200px;height: 200px;" src="https://tse1.mm.bing.net/th/id/OIP.EjVUjdM6sixst1RewX2DRQHaD5?rs=1&pid=ImgDetMain" alt=""></p><br>`
+        } else if (aleatorio2 == 2) {
+            mensagem += `<p><img style="width: 200px;height: 200px;" src="https://tse2.mm.bing.net/th/id/OIP.xnPDBBqsbK_UtSAYhqpq0AHaHa?rs=1&pid=ImgDetMain" alt=""></p><br>`
+        } else {
+            mensagem += `<p><img style="width: 200px;height: 200px;" src="https://www.usinainfo.com.br/1028730-thickbox_default/tesoura-10-de-uso-geral-com-cabo-curvado.jpg" alt=""></p><br>`
+        }
+
+        if (aleatorio1 == aleatorio2) {
+            jogador1 += 0
+            jogador2 += 0
+        } else {
+            if (aleatorio1 == 1 && aleatorio2 == 2) {
+                jogador2 += 1
+                mensagem=`O jogador 2 venceu!`
+            } else if (aleatorio1 == 1 && aleatorio2 == 3) {
+                jogador1 += 1
+                mensagem=`O jogador 1 venceu!`
+            } else if (aleatorio2 == 1 && aleatorio1 == 2) {
+                jogador1 += 1
+                mensagem=`O jogador 1 venceu!`
+            } else if (aleatorio2 == 1 && aleatorio1 == 3) {
+                jogador2 += 1
+                mensagem=`O jogador 2 venceu!<br>`
+            }
+        }
+
+        msg.innerHTML = `${mensagem}jogador 1: ${jogador1}vitoria(s)<br> jogador 2:${jogador2}vitoria(s)`
+
+    }
+</script>

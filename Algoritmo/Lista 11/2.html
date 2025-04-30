@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sortear time</h1><br>
+    <button onclick="btn()">Sortear time</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var numero = Math.random()
+        var inteiro = (numero * 3 + 1).toFixed(0)
+
+        if (inteiro == 1) {
+            mensagem = `<img style="width: 180px; height: 180px;" src="https://tse3.mm.bing.net/th/id/OIP.jfnJVUJgGgiYJPEgcQzUdwHaJm?rs=1&pid=ImgDetMain" alt="">`
+        } else if (inteiro == 2) {
+            mensagem = `<img style="width: 180px; height: 180px;" src="https://tse2.mm.bing.net/th/id/OIP.pQha19i1pXiJmjonYsaVHAHaHY?rs=1&pid=ImgDetMain" alt="">`
+        } else if (inteiro == 3) {
+            mensagem = `<img style="width: 180px; height: 180px;" src="https://tse1.mm.bing.net/th/id/OIP.AO2R-20aNmBJ7vUzW2W_9gHaHa?rs=1&pid=ImgDetMain" alt="">`
+        } else {
+            mensagem = `<img style="width: 180px; height: 180px;" src="https://th.bing.com/th/id/OIP.r0bInFrvEV5oYmuqtZYJQQHaHa?rs=1&pid=ImgDetMain" alt="">`
+        }
+
+        msg.innerHTML = mensagem
+    }
+</script>

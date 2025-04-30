@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sortear Nota para aluno</h1><br>
+    <button onclick="btn()">Sortear Nota para aluno</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function btn() {
+        var numero = (Math.random() * 10).toFixed(1)
+        var mensagem = ``
+
+        mensagem = `${numero}`
+
+        msg.innerHTML = `${mensagem}`
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>jogar dado</h1><br>
+    <button onclick="btn()">jogar dado</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    function btn() {
+        var numero = Math.random()
+        var inteiro = (numero * 19 + 1).toFixed(0)
+        var mensagem = ``
+
+        mensagem = `<div style="display: flex;flex-direction: row;justify-items: center;align-items: center;"><p style="width: 100px; height: 100px; text-align: center; color:white; background:black">${inteiro}</p></div>`
+
+        msg.innerHTML = mensagem
+    }
+</script>
