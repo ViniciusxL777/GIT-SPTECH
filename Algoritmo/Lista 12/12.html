@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cadastro de Filhos sem Repetição e Estimativa de Custo Escolar</h1><br>
+    <br>
+    Nome do seus filhos:
+    <input type="text" id="input_nome"><br>
+    <button onclick="btn()">Cadastrar</button><br>
+    <br>
+    <button onclick="btn1()">Atualizar Família</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var listaNome = []
+
+    function btn() {
+        var nome = input_nome.value
+        if (!listaNome.includes(nome)) {
+            listaNome.push(nome)
+        } else {
+            alert(`Não pode mais de 1 filho com o mesmo nome!`)
+        }
+    }
+
+    function btn1() {
+        var pub = 1500 * listaNome.length
+        var part = 3000 * listaNome.length
+
+        msg.innerHTML = `Você tem ${listaNome.length} filhos  
+        Seu custo mensal será aproximadamente R$${part} se colocá-los em escola particular ou R$${pub} se eles estudarem em escola pública `
+    }
+
+</script>

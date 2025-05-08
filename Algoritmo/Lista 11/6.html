@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Dia</h1><br>
+    <br>
+    <button onclick="dia()">Sortear momento do dia</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function dia() {
+        var hora = (Math.random() * 23).toFixed(0)
+        var mensagem = ``
+
+        if (hora >= 0 && hora <= 11) {
+            mensagem = `Bom dia, flor do dia, são ${hora}h!`
+        } else if (hora >= 12 && hora <= 17) {
+            mensagem = `Boa tarde, já vai tarde! São ${hora}h!`
+        } else {
+            mensagem = `Boa noite, durma bem! São ${hora}h!`
+        }
+
+        msg.innerHTML = mensagem
+    }
+</script>

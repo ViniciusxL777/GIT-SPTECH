@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sistema de Cadastro de Produtos com Relatório de Preço de Venda</h1><br>
+    <br>
+    Nome do produto:
+    <input type="text" id="input_produto"><br>
+    Preço de compra:
+    <input type="text" id="input_preco"><br>
+    <br>
+    <button onclick="btn()">Cadastrar</button><br>
+    <br>
+    <button onclick="btn1()">Relatório de estoque</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var listaProduto = []
+    var listaPreco = []
+
+    function btn() {
+        var produto = input_produto.value
+        var preco = Number(input_preco.value)
+
+        if (listaProduto.includes(produto)) {
+            alert('Produto já cadastrada')
+        } else {
+            listaProduto.push(produto)
+            listaPreco.push(preco)
+        }
+    }
+
+    function btn1() {
+        var mensagem = ``
+        var qtdProduto = 0
+        var posicaoMaior = 0
+        var posicaoMenor = 0
+        var maior = listaPreco[0]
+        var menor = listaPreco[0]
+        var precoMax = 0
+        var precoMedio = 0
+
+        for (var o = 1; o <= listaPreco.length; o++) {
+            if (maior <= listaPreco[o - 1]) {
+                maior = listaPreco[o - 1]
+                posicaoMaior = listaProduto[o - 1]
+            }
+
+            if (menor >= listaPreco[o - 1]) {
+                menor = listaPreco[o - 1]
+                posicaoMenor = listaProduto[o - 1]
+            }
+
+            precoMax += listaPreco[o - 1]
+            precoMedio = listaPreco[o - 1] * 1.25
+        }
+
+        for (var i = 1; i <= listaProduto.length; i++) {
+            qtdProduto += 1
+            mensagem += `Produto ${i}: ${listaProduto[i - 1]}<br>
+                Preço de compra: R$${listaPreco[i - 1]} .Vender por R$${listaPreco[(i - 1)] * 1.25} <br><br>`
+        }
+        msg.innerHTML = `Total de produtos: ${qtdProduto}<br>
+        Produto mais caro: ${posicaoMaior}<br>
+        Produto mais bararo: ${posicaoMenor}<br>
+        A soma dos preços do produtos é: ${precoMax}R$<br>
+        A média de preço de venda dos produtos: ${precoMedio / listaProduto.length}R$<br>
+    <br> ${mensagem}`
+    }
+
+
+</script>

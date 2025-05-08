@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Top Filmes Favoritos: Do Mais Amado ao Menos</h1><br>
+    <br>
+    Informe os favoritos e depois os menos:
+    <input type="text" id="input_filme"><br>
+    <br>
+    <button onclick="btn()">Cadastrar filme</button><br>
+    <br>
+    <button onclick="btn1()">Ver Favoritos</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var listaFilme = []
+    var a
+
+    function btn() {
+        var filme = input_filme.value
+        listaFilme.push(filme)
+    }
+
+    function btn1() {
+        msg.innerHTML = `Total ${listaFilme.length}`
+        for (var i = 0; i < listaFilme.length; i++) {
+            a = i
+        }
+        msg.innerHTML += `<br>O que filme que mais gosta é ${listaFilme[0]}.
+            E desses, o que menos gosta é ${listaFilme[a]} `
+    }
+</script>

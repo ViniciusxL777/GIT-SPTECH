@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Controle de Estoque de Produtos com Cálculo de Valor Total</h1><br>
+    <br>
+    Preço de um produto:
+    <input type="text" id="input_preco"><br>
+    <button onclick="btn()">Cadastrar</button><br>
+    <br>
+    <button onclick="btn1()">Atualizar Estoque</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var listaPreco = []
+
+    function btn() {
+        var preco = Number(input_preco.value)
+        listaPreco.push(preco)
+    }
+
+    function btn1() {
+        var precoFinal = 0
+        for (i = listaPreco.length; i > 0; i--) {
+            msg.innerHTML += `${listaPreco[i - 1]}<br>`
+            precoFinal += listaPreco[i - 1]
+        }
+        msg.innerHTML += `Você tem ${listaPreco.length} produtos cadastrados em estoque<br>
+        Seu estoque vale R$ ${precoFinal}`
+    }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Registro de Números com Histórico, Maior e Menor Valor</h1><br>
+    Digite um número qualquer:
+    <input type="text" id="input_numero"><br>
+    <button onclick="btn()">Analisar histórico</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var listaNumero = []
+
+    function btn() {
+        msg.innerHTML = ``
+        var msg1 = ``
+        var numero = Number(input_numero.value)
+        var maior = ``
+        var menor = ``
+        if (listaNumero.includes(numero)) {
+            msg.innerHTML = `Este número já foi cadastrado`
+        } else {
+            listaNumero.push(numero)
+            maior = listaNumero[0]
+            menor = listaNumero[0]
+
+            for (var i = 1; i <= listaNumero.length; i++) {
+                msg1 += `${i}º Número: ${listaNumero[i - 1]}<br>`
+
+                if (maior < listaNumero[i - 1]) {
+                    maior = listaNumero[i - 1]
+                }
+
+                if (menor > listaNumero[i - 1]) {
+                    menor = listaNumero[i - 1]
+                }
+            }
+            msg.innerHTML += msg1 + `Maior: ${maior}<br>  
+            Menor: ${menor}  `
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cadastro de Alunos com Exibição Invertida</h1><br>
+    <br>
+    Nome dos Alunos:
+    <input type="text" id="input_nome"><br>
+    <button onclick="btn()">Cadastrar</button><br>
+    <br>
+    <div id="msg1"></div>
+
+</body>
+
+</html>
+<script>
+    var listaAluno = []
+    var msg = ``
+    function btn() {
+        var nome = input_nome.value
+        listaAluno.push(nome)
+        for (var i = listaAluno.length; i > 0; i--) {
+            msg += `${listaAluno[i - 1]}<br>`
+        }
+        msg1.innerHTML = msg
+    }
+</script>

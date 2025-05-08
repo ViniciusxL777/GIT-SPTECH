@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Nota</h1><br>
+    <br>
+    <button onclick="btn()">Gerar uma nota de aluno entre 3 e 10</button><br>
+    <div id="msg"></div><br>
+    <br>
+    <button onclick="btn2()">Gerar uma frequência de aluno entre 50 e 100</button><br>
+    <div id="msg2"></div><br>
+    <br>
+    <button onclick="btn3()">Ver Aprovação</button><br>
+    <div id="msg3"></div>
+</body>
+
+</html>
+<script>
+    var nota
+    var frequência
+    
+    function btn() {
+        nota = (Math.random() * 7 + 3).toFixed(1)
+        msg.innerHTML = `${nota}`
+    }
+
+    function btn2() {
+        frequência = (Math.random() * 50 + 50).toFixed(1)
+        msg2.innerHTML = `${frequência}`
+    }
+
+    function btn3() {
+
+        if (nota >= 6 && frequência >= 75) {
+            msg3.innerHTML = `Com nota ${nota} e frequência ${frequência}, o aluno está aprovado!`
+        } else {
+            msg3.innerHTML = `Com nota ${nota} e frequência ${frequência}, o aluno está reprovado!`
+        }
+    }
+
+</script>

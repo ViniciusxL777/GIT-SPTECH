@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Nota</h1><br>
+    <br>
+    <button onclick="btn()">Gerar uma nota de aluno entre 0 e 10</button><br>
+    <button onclick="btn2()">Gerar uma frequência de aluno entre 0 e 100</button><br>
+    <button onclick="btn3()">Ver Situação</button>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var mensagem1 = ``
+    var mensagem2 = ``
+    function btn() {
+        var nota = (Math.random() * 9).toFixed(2)
+        mensagem1 = nota
+    }
+
+    function btn2() {
+        var frequência = (Math.random() * 99 + 1).toFixed(2)
+        mensagem2 = frequência
+    }
+
+    function btn3() {
+        alert(`Nota: ${mensagem1}, Frequência: ${mensagem2}`)
+    }
+
+
+</script>

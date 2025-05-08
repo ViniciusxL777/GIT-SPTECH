@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Caça às Frutas: Descubra se está na Lista</h1><br>
+    <br>
+    Nome da Fruta:
+    <input type="text" id="input_fruta"><br>
+    <button onclick="btn()">Pesquisar</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+
+    function btn() {
+        var fruta = input_fruta.value
+        var listFruta = ['Maçã', 'Pera', 'Banana']
+        if (listFruta.includes(fruta)) {
+            msg.innerHTML = `A fruta ${fruta} existe na lista.`
+        } else {
+            msg.innerHTML = `Não existe a fruta ${fruta} na lista.`
+        }
+    }
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Registro de Linhas de Ônibus com Pesquisa de Histórico</h1><br>
+    <br>
+    Linhas de onibus usadas na semana:
+    <input type="text" id="input_onibus"><br>
+    <button onclick="btn()">Gravar busão</button><br>
+    Pesquisar linha de onibus já usadas:
+    <input type="text" id="input_pesquisar"><br>
+    <button onclick="btn1()">Pesquisar</button><br>
+    <br>
+    <div id="msg"></div>
+
+</body>
+
+</html>
+<script>
+    var listaOnibus = []
+
+    function btn() {
+        var onibus = input_onibus.value
+        listaOnibus.push(onibus)
+        var msg2 = ``
+        for (var i = listaOnibus.length; i > 0; i--) {
+            msg2 += `${listaOnibus[i - 1]}<br>`
+        }
+        msg.innerHTML = msg2
+    }
+
+    function btn1() {
+        var pesquisar = input_pesquisar.value
+        var msg1 = ``
+        var qtdVezes = 0
+        var posicao = []
+
+        if (listaOnibus.includes(pesquisar)) {
+            for (i = 0; i <= listaOnibus.length; i++) {
+                if (listaOnibus[i - 1] == pesquisar) {
+                    posicao.push(i)
+                    qtdVezes += 1
+                }
+            }
+            msg1 += `<br>Você já pegou essa linha ${qtdVezes} vezes, nessa ordem: ${posicao}`
+        } else {
+            msg1 += `Você nunca pegou essa linha`
+        }
+        msg.innerHTML = msg1
+    }
+
+</script>

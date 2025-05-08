@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Filmes em Cores: Azul e Vermelho Alternados</h1><br>
+    <br>
+    Informe um filme:
+    <input type="text" id="input_filme"><br>
+    <button onclick="btn()">Cadastrar</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var listaFilme = []
+    var contador = 0
+
+    function btn() {
+        var filme = input_filme.value
+
+        if (listaFilme.includes(filme)) {
+            alert(`Esse filme já foi cadastrado`)
+        } else if (contador % 2 == 0) {
+            listaFilme.push(filme)
+            msg.innerHTML += `<p style="color: blue;">${listaFilme[contador]}<br></p>`
+            contador++
+        } else {
+            listaFilme.push(filme)
+            msg.innerHTML += `<p style="color: red;">${listaFilme[contador]}<br></p>`
+            contador++
+        }
+    }
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sistema de Cadastro de Produtos com Relatório de Preço de Venda</h1><br>
+    <br>
+    Nome do produto:
+    <input type="text" id="input_produto"><br>
+    Preço de compra:
+    <input type="text" id="input_preco"><br>
+    <br>
+    <button onclick="btn()">Cadastrar</button><br>
+    <br>
+    <button onclick="btn1()">Relatório de estoque</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var listaProduto = []
+    var listaPreco = []
+
+    function btn() {
+        var produto = input_produto.value
+        var preco = Number(input_preco.value)
+
+        if (listaProduto.includes(produto)) {
+            alert('Produto já cadastrada')
+        } else {
+            listaProduto.push(produto)
+            listaPreco.push(preco)
+        }
+    }
+
+    function btn1() {
+        var mensagem = ``
+        var qtdProduto = 0
+        for (var i = 1; i <= listaProduto.length; i++) {
+            qtdProduto += 1
+            mensagem += `Produto ${i}: ${listaProduto[i - 1]}<br>
+                Preço de compra: R$${listaPreco[i - 1]} .Vender por R$${listaPreco[(i - 1)] * 1.25} <br><br>`
+        }
+        msg.innerHTML = `Total de produtos: ${qtdProduto}<br>
+    <br> ${mensagem}`
+    }
+
+
+</script>

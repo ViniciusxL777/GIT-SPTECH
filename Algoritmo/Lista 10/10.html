@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fases da Vida</title>
 </head>
-<body>
-    <h1>Fases da Vida</h1><br>
-    <br>
-    Digite sua idade:
-    <input type="text" id="input_idade"><br>
-    <button onclick="btn()">Verificar</button><br>
-    <br>
-    <div id="msg"></div>
-</body>
-</html>
-<script>
-    function btn(){
-        var idade = Number(input_idade.value)
 
-        
+<body>
+    <h2>Fases da Vida</h2>
+    Digite sua idade: <br>
+    <input type="text" id="input_idade" oninput="mostrarFases()"><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function mostrarFases() {
+        var idadeTexto = input_idade.value;
+        var idade = Number(idadeTexto);
+        var mensagem = "";
+
+        if (idadeTexto == "" || idade < 0) {
+            mensagem = "Digite uma idade válida.";
+        }
+
+        for (var contador = 0; contador <= idade; contador++) {
+            var fase = "";
+            if(contador <= 4) {
+                fase = "Primeira Infância";
+            } else if (contador <= 6) {
+                fase = "Pré-escolar";
+            } else if (contador <= 10) {
+                fase = "Segunda Infância";
+            } else if (contador <= 18) {
+                fase = "Adolescência";
+            } else {
+                fase = "Adulto";
+            }
+
+            mensagem += `${contador} anos ${fase}<br>`;
+        }
+
+        div_mensagem.innerHTML = mensagem;
     }
 </script>
